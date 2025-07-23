@@ -50,6 +50,6 @@ app.post('/validate-otp', (req, res) => {
 
 // Listen on all interfaces so others on the network can connect
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`✅ Server running at http://0.0.0.0:${PORT}`);
-    console.log(`🌐 Access this server from other devices using: http://10.174.67.1:${PORT}`);
+    console.log(` Server running at http://0.0.0.0:${PORT}`);
+    console.log(` Access this server from other devices using: http://10.174.67.1:${PORT}`);
 });
