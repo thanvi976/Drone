@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyDrop - Drone Delivery Kiosk</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="floating-emojis">
+        <!-- These will be populated by JavaScript -->
+    </div>
+    
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">SkyDrop<span class="logo-dot">.</span></h1>
+            <nav class="nav">
+                <a href="#about">About</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#retrieve">Retrieve Package</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="animate__animated animate__fadeInDown">The Future of Delivery is Here</h2>
+                    <p class="animate__animated animate__fadeInUp">Autonomous drone delivery kiosks for fast, secure, and contactless package retrieval.</p>
+                    <a href="#retrieve" class="btn animate__animated animate__fadeInUp">Retrieve Package</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container">
+                <h2>About SkyDrop</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-icon">🚀</div>
+                        <h3>Fast Delivery</h3>
+                        <p>Receive your packages in minutes, not days. Our drones fly at speeds up to 60 mph.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">🔒</div>
+                        <h3>Secure</h3>
+                        <p>One-time passcodes ensure only you can access your delivery.</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">🌱</div>
+                        <h3>Eco-Friendly</h3>
+                        <p>Zero-emission deliveries that reduce traffic congestion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="section how-it-works">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <p>Place your order through our partner retailers</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <p>Receive a one-time passcode (OTP) via SMS/email</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <p>Visit your nearest SkyDrop kiosk and enter the OTP</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <p>Retrieve your package from the secure compartment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="retrieve" class="section retrieve">
+            <div class="container">
+                <h2>Retrieve Your Package</h2>
+                <div class="retrieve-box">
+                    <div class="kiosk-display">
+                        <div class="kiosk-screen" id="kiosk-screen">
+                            <p>Please enter your one-time passcode to retrieve your package</p>
+                            <form id="otp-form">
+                                <input type="text" id="otp-input" placeholder="Enter OTP" maxlength="6" required>
+                                <button type="submit" class="btn">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="kiosk-image">
+                        <div class="kiosk-glass" id="kiosk-glass"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 SkyDrop Drone Delivery. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/animations.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
