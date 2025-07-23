@@ -4,7 +4,7 @@ const fs = require('fs');
 const bodyParser = require('body-parser');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000; // Fixed port
 
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
@@ -28,26 +28,28 @@ app.get('/', (req, res) => {
 
 app.post('/validate-otp', (req, res) => {
     const { otp } = req.body;
-    
+
     if (!otp) {
         return res.status(400).json({ success: false, message: 'OTP is required' });
     }
-    
-    // Check if OTP exists in our list
+
     const isValid = otps.includes(otp);
-    
+
     if (isValid) {
-        // In a real app, you'd remove the OTP after use
+        console.log('🔓 Glass door opened'); // Log when OTP is valid
+
+        // Optional: remove used OTP
         // otps = otps.filter(o => o !== otp);
         // fs.writeFileSync(path.join(__dirname, 'otps.json'), JSON.stringify(otps));
-        
+
         return res.json({ success: true });
     } else {
         return res.json({ success: false });
     }
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+// Listen on all interfaces so others on the network can connect
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`✅ Server running at http://0.0.0.0:${PORT}`);
+    console.log(`🌐 Access this server from other devices using: http://10.174.67.1:${PORT}`);
 });
